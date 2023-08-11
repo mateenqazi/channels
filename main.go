@@ -5,6 +5,6 @@ import "fmt"
 func main() {
 	fmt.Println("hello")
 
-	Code3()
+	Code4()
 
 }
