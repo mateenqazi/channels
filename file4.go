@@ -5,11 +5,17 @@ import "fmt"
 func Code4() {
 
 	c := make(chan int)
-	fmt.Println(<-c)
-	// c <- 42
-	// go func() {
-	// 	// c <- 42
-	// 	fmt.Println(<-c)
 
-	// }()
+	go func() {
+		c <- 42
+
+	}()
+	fmt.Println(<-c)
+
+	// directional
+
+	cr := make(<-chan int)
+	cs := make(chan<- int)
+	fmt.Printf("%T, %T", cr, cs)
+
 }
